@@ -1,23 +1,31 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class SQLiteDB {
     public static void main(String[] args) {
-        try {
-            // load the sqlite-jdbc driver
-            Class.forName("org.sqlite.JDBC");
+        String url = "jdbc:sqlite:mydatabase.db";
 
-            // connect to the database
-            String url = "jdbc:sqlite:mydatabase.db"; 
-            Connection conn = DriverManager.getConnection(url);
+        try (Connection conn = DriverManager.getConnection(url);
+             Statement stmt = conn.createStatement()) {
 
-            System.out.println("Connected to SQLite database.");
-            conn.close(); // close connection
-        } catch (ClassNotFoundException e) {
-            System.out.println("SQLite JDBC Driver not found: " + e.getMessage());
+            // create patient table
+            String sql = "CREATE TABLE IF NOT EXISTS Patient (" +
+                         "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                         "first_name TEXT NOT NULL, " +
+                         "last_name TEXT NOT NULL, " +
+                         "dob DATE NOT NULL," +
+                         "gender TEXT NOT NULL CHECK(gender IN('Male', 'Female'))," +
+                         "phone TEXT UNIQUE" +
+                         ");";
+            stmt.execute(sql);
+
+            
+
+            System.out.println("Patient table created.");
         } catch (SQLException e) {
-            System.out.println("Connection failed: " + e.getMessage());
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }

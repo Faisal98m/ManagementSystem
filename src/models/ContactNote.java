@@ -1,5 +1,8 @@
 package models;
 
+import java.security.Timestamp;
+import java.time.LocalDate;
+
 public class ContactNote {
     
     /*
@@ -39,5 +42,34 @@ public class ContactNote {
      * 
      */
 
+    private String note_text;
+    private User createdByUser;
+    private Timestamp timestamp;
+    private LocalDate date;
+
+ 
+
+    public ContactNote(String noteText, User createdBy, LocalDate date){
+        this.note_text = noteText;
+        this.date = date;
+        this.createdByUser = createdBy;
+     }
+
+
+     public String getNote_text() {
+        return note_text;
+    }
+
+    public User getCreated_by_user() {
+        return createdByUser;
+    }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
     
 }

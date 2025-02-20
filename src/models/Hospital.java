@@ -25,4 +25,49 @@ public class Hospital {
      * -Retrieve hospital list for dropdown
      * 
      */
+
+    
+    private String name;
+    private int id;
+
+    private Address address;
+    
+    private String email;
+
+    public Hospital (){}
+
+    public Hospital (int id,String name, Address address, String email){
+        this.name = name;
+        this.address = address;
+        this.email = email;
+        this.id =id;
+    }
+
+    
+    public int getId(){
+        return id;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    private void setAddress(Address address){
+        this.address = address;
+    }
+
+    private void setEmail(String email){
+        this.email = email;
+    }
 }
+

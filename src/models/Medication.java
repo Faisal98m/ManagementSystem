@@ -21,5 +21,29 @@ public class Medication {
      * Getters / Setters
      * Retrieve medication list for prescription tab
      */
+
+    private String name;
+    private Integer strength;
+    private String date;
+  
     
+    public Medication(String name, int strength, String date){
+        this.name = name;
+        this.strength = strength;
+        this.date = date;
+    }
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getStrength() {
+        return strength;
+    }
+
+    public String getDate() {
+        return date;
+    }
 }

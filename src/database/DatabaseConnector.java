@@ -45,6 +45,7 @@ public class DatabaseConnector {
 
     public static int executeUpdate(String sql){
 
+        //updates the databse
         int rowsAffected = 0;
 
         try(Connection conn = connect();
@@ -62,6 +63,8 @@ public class DatabaseConnector {
 
     public static ResultSet executeQuery(String sql){
 
+        //fetches data from database returning it into a container of type ResultSet
+        //We can then later on use this method to run through queries on the database
         ResultSet resultSet = null;
 
         try(Connection conn = connect();

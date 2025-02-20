@@ -1,5 +1,7 @@
 package models;
 
+import java.time.LocalDate;
+
 public class Prescription {
 
     /*
@@ -19,5 +21,34 @@ public class Prescription {
      * 
      * 
      */
+
+    private int id;
+    private LocalDate dateOfPrescriptio;
+    private String purchaseNumber;
+    private Medication medication;
     
+
+
+    public Prescription(LocalDate dateOfPrescription, String purchaseNumber, Medication medication){
+        this.id = id;
+        this.dateOfPrescriptio = dateOfPrescription;
+        this.purchaseNumber = purchaseNumber;
+        this.medication= medication;
+     }
+
+     public int getId() {
+        return id;
+    }
+
+    public LocalDate getDate_of_prescription() {
+        return dateOfPrescriptio;
+    }
+
+    public String getpurchaseNumber() {
+        return purchaseNumber;
+    }
+
+    public Medication getMedication() {
+        return medication;
+    }
 }

@@ -24,14 +24,14 @@ public class Address {
 
     private String streetName;
     private int houseNumber;
-    private String post_code;
+    private String postcode;
     private String city;
 
 
     public Address(String streetName, int houseNumber, String postcode, String city ){
         this.streetName = streetName;
         this.houseNumber = houseNumber;
-        this.post_code = postcode;
+        this.postcode = postcode;
         this.city = city;
     }
 
@@ -43,7 +43,7 @@ public class Address {
         return houseNumber;
     }
     public String getPostcode() {
-        return post_code;
+        return postcode;
     }
     
     public String getCity() {
@@ -62,7 +62,7 @@ public class Address {
     public void setPostcode(String postcode) {
          this.postcode = postcode;
          }
-         
+
     public void setCity(String city) { 
         this.city = city; 
     }

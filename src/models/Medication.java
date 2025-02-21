@@ -1,5 +1,6 @@
 package models;
 
+import java.time.LocalDate;
 
 public class Medication {
 
@@ -22,18 +23,23 @@ public class Medication {
      * Retrieve medication list for prescription tab
      */
 
+    private int id;
     private String name;
     private Integer strength;
-    private String date;
+    private LocalDate date;
   
     
-    public Medication(String name, int strength, String date){
+    public Medication(int id,String name, int strength, LocalDate date){
         this.name = name;
         this.strength = strength;
         this.date = date;
+        this.id = id;
     }
 
 
+    public int getId(){
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -43,7 +49,7 @@ public class Medication {
         return strength;
     }
 
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 }

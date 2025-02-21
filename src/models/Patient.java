@@ -28,35 +28,59 @@ public class Patient {
 
      new Patient("john", "doe", 24/12/1993, 0399394004)
      */
-    private String first_name;
-    private String last_name;
+    private int id;
+    private String firstName;
+    private String lastName;
     private LocalDate dob;
-    private Integer number;
-    private String hospital;
+    private String phoneNumber;
+    private Integer hospitalId;
+    private String nhsNumber;
+    private String gender;
+    private Integer addressId;
+    private String email;
 
 
-    public String getHospital() {
-        return hospital;
-    }
 
 
+   
 
-    public Patient(String firstName, String lastName, LocalDate dob, int number, String hospital){
+    public Patient(String firstName, String lastName, String gender, String phoneNumber, String email, int hospitalId, int addressId) {
         this.firstName = firstName;
-        this.last_name = lastName;
-        this.dob = dob;
-        this.number = number;
-        this.hospital = hospital;
-    }
-
-
-
-    public String getFirst_name() {
-        return first_name;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.hospitalId = hospitalId;
+        this.addressId = addressId;
     }
     
-    public String getLast_name() {
-        return last_name;
+    public Patient(int id, String firstName, String lastName, String gender, String phoneNumber, int hospitalId, int addressId, String email) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.phoneNumber = phoneNumber;
+        this.hospitalId = hospitalId;
+        this.addressId = addressId;
+        this.email = email;
+    }
+
+    public Patient(String firstName, String lastName, LocalDate dob, String phoneNumber, String hospital, String nhsNumber){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
+        this.phoneNumber = phoneNumber;
+        this.nhsNumber = nhsNumber;
+    }
+
+
+
+    public String getFirstName() {
+        return firstName;
+    }
+    
+    public String getLastName() {
+        return lastName;
     }
 
     public LocalDate getDob() {
@@ -64,9 +88,16 @@ public class Patient {
         return dob;
     }
 
+    public String getNumber() {
+        return phoneNumber;
+    }
+    
+    public String getNhsNumber() {
+        return nhsNumber;
+    }
 
-    public Integer getNumber() {
-        return number;
+    public Integer getHospital() {
+        return hospitalId;
     }
 
 }

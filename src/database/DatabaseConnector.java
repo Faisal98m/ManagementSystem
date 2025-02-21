@@ -22,7 +22,7 @@ import java.sql.ResultSet;
 
 public class DatabaseConnector {
 
-    private static final String URL = "C:\\Users\\faisa\\OneDrive\\Desktop\\Patient Management System\\Resources\\mydatabase.db";
+    private static final String URL = "jdbc:sqlite:mydatabase.db";
 
 
     public static Connection connect(){
@@ -50,6 +50,9 @@ public class DatabaseConnector {
 
         try(Connection conn = connect();
             Statement stmt = conn.createStatement()) {
+                if(conn == null){
+                    throw new SQLException("Connection is null. check path");
+                }
 
                 rowsAffected = stmt.executeUpdate(sql);
                 System.out.println("Query executed successfully. Rows affected:" + rowsAffected);

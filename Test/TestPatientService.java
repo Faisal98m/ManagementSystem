@@ -1,5 +1,6 @@
 package Test;
 
+import models.Patient;
 import services.PatientService;
 
 public class TestPatientService {
@@ -7,8 +8,11 @@ public class TestPatientService {
         PatientService patientService = new PatientService();
 
         // Add a new patient
-        int patientId = patientService.addPatient("john", "jones", "Male", "098843343", 1, 1, "johnbones@gmail.com");
-        System.out.println(patientService.getPatientByID(patientId));
+        Patient ibrahimovic = new Patient("Zlatan", "brahim", "Female", "2223", "sam.brap@gmai.com", 2, 14);
+        int brahim = patientService.addPatient(ibrahimovic);
+        System.out.println(patientService.getPatientByID(brahim));
+        System.out.println(ibrahimovic.toString());
+        
         
 
     }
